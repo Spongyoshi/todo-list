@@ -1,0 +1,11 @@
+<app-weathersearch></app-weathersearch>
+<div *ngIf="loading">
+    <app-weatherloading></app-weatherloading>
+</div>
+<div *ngIf="!loading && error">
+    <app-weathererror></app-weathererror>
+</div>
+<div *ngIf="!loading && !error">
+  <app-weatherresult></app-weatherresult>
+</div>
+<app-weatherhistory></app-weatherhistory>

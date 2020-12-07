@@ -1,0 +1,32 @@
+<!-- Searchbar -->
+<div *ngIf="!loading">
+  <form [formGroup]="formWeather" (ngSubmit)="search()">
+    <ion-input formControlName="search"></ion-input>
+    <ion-button ion-button type="submit">🔍</ion-button>
+  </form>
+</div>
+<div *ngIf="loading">
+  <form [formGroup]="formWeather" (ngSubmit)="search()">
+    <ion-input formControlName="search" disabled></ion-input>
+    <ion-button ion-button type="submit" disabled>🔍</ion-button>
+  </form>
+</div>
+
+<!-- Results ou Load ou Error -->
+<div *ngIf="loading">
+  <img src = "../../../assets/Load1.png">
+</div>
+<div *ngIf="!loading && error">
+  <img src = "../../../assets/Load2.png">
+</div>
+<div *ngIf="!loading && !error">
+  <h1>{{ tab.name }}</h1>
+  <p>{{ tab.main.temp }}</p>
+</div>
+
+<!-- Historique -->
+<!--
+<div *ngIf="history">
+   {{foreach story in history}}
+   <p>{{story}}</p>
+</div>-->
